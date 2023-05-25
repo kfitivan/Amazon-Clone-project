@@ -15,7 +15,7 @@ function Header(props) {
         </a>
       </div>
       <div className='header__search'>
-        <input placeholder='search'/>
+        <input placeholder='Search Amazon'/>
         <SearchIcon className='header__searchIcon'/>
       </div>
       <div className='header-nav'>
