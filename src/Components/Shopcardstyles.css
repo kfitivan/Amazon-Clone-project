@@ -1,0 +1,45 @@
+.shop{
+    margin: 1rem 2rem;
+    width: 25%;
+    align-items: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+.shop-card{
+    display: flex;
+    column-gap: 70px;
+    margin-left: 20px;
+    margin-right: auto;
+}
+.shop h1{
+    margin-left: 20px;
+}
+.shop a{
+    text-decoration: none;
+    padding: 0.3rem .5rem;
+    list-style: none;
+    font-size: 1rem;
+    margin-left: 20px;
+}
+.s-card a{
+    text-decoration: none;
+    padding: 0.3rem .5rem;
+    list-style: none;
+    
+}
+
+.s-card img{
+    width: 30%;
+    height: 40%;
+    border-radius: 7px;
+}
+.s-card h4{
+    color: black;
+    background-color: #fff;
+}
+
+.heading{
+    display: flex;
+    margin-left: 20px;
+    margin-right: auto;
+    column-gap: 100px;
+}

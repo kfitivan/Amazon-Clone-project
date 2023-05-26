@@ -11,7 +11,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 function HomeSlider() {
   const sliderImages = [ 
     {
-       url: require("../assets/cloth1.jpg")
+       url: require("../assets/Capture1.PNG")
     },
     {
        url: require("../assets/cloth2.jpg")
@@ -19,6 +19,9 @@ function HomeSlider() {
     {
        url: require("../assets/phone.jpg")
     },
+    {
+      url: require("../assets/cloth1.jpg")
+   },
     {
        url: require("../assets/laptop.jpg")
     },
