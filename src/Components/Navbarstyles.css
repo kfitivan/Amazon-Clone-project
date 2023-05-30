@@ -1,6 +1,7 @@
 
 .navbar-elements{
     background-color: #232F3E;
+    height: 80px;
 }
 .item-listing{
     display: flex;

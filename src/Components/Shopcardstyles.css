@@ -1,15 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+.html {
+    min-width: 550px;
+    position: relative;
+    }
+
 .shop{
     margin: 1rem 2rem;
     width: 25%;
-    align-items: center;
+    
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: hidden;
+    /* margin-left: auto;
+    margin-right: auto; */
+    max-width: 1500px;
+    justify-content: flex-end;
+    
 }
 .shop-card{
     display: flex;
     column-gap: 70px;
     margin-left: 20px;
-    margin-right: auto;
+    
+    overflow: hidden;
 }
+.s-card img{
+    width: 100%;
+    height: 80px;
+    border-radius: 7px;
+    object-fit: contain;
+    display: block;
+}
+
 .shop h1{
     margin-left: 20px;
 }
@@ -25,12 +53,6 @@
     padding: 0.3rem .5rem;
     list-style: none;
     
-}
-
-.s-card img{
-    width: 30%;
-    height: 40%;
-    border-radius: 7px;
 }
 .s-card h4{
     color: black;
