@@ -10,9 +10,10 @@ import Img6 from "../assets/jeans.PNG"
 import Img7 from "../assets/sweater.PNG"
 import Img8 from "../assets/nights.PNG"
 import Img9 from "../assets/shoes.PNG"
-import Img10 from "../assets/tablet.PNG"
+
 
 function ShopCard() {
+
   return (
     <>
     <div className="shop">
@@ -25,7 +26,7 @@ function ShopCard() {
                 image3={Img3}
                 title3="Computer mice"
                 image4={Img4}
-                title4="Chairs"
+                title4="Flexible Chairs"
             /> 
         <a href='/'>See all</a>
     </div>
@@ -38,8 +39,9 @@ function ShopCard() {
                 heading="Top deal"
                 title="Samsung Tablets"
             /> 
-            <a href='/'>See all</a>
+        <a href='/'>See all</a>
     </div>
+
     <div className='shop'>
         <h1>Shop deals in Fashion</h1>
             <ShopcardData
