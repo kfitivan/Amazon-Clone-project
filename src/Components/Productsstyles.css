@@ -16,6 +16,7 @@
     padding: 10px;
     margin: 40px 20px;
     background-color: white;
+    text-align: center;
 }
 
 .product-image{
@@ -24,16 +25,21 @@
     min-height: 200px;
     display: block;
     object-fit: cover;
+    padding-top: 25px;
+    transition: .2s;
+}
+.product-homeimage:hover{
+    transform: scale(1.2);
 }
 .product-name{
     text-transform: uppercase;
-    margin: 10px o;
+    margin: 10px 0;
 }
 .product-price{
     margin: 10px 0px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 20px;
 }
 .product-add-button{
     font-weight: 700;
@@ -49,4 +55,10 @@
     cursor: pointer;
     text-transform: uppercase;
     margin: 15px auto;
+}
+.product-add-button:hover{
+    background-color: #F7CA00;
+}
+.product-add-button:active {
+    transform: translateY(2px);
 }

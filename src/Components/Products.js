@@ -1,19 +1,24 @@
 import React from 'react'
 import "./Productsstyles.css"
+import { Link } from 'react-router-dom'
 
-const Products= ({productItems}) =>{
+const Products= ({productItems, handleAddProduct}) =>{
     
   return (
     <div className='products'>
       {productItems.map((productItem)=>(
         <div className='card'>
             <div className='product-name'><h3>{productItem.title}</h3></div>
-            <div>
+            <div className='product-homeimage'>
+              <Link to={productItem.url} className='home-images'>
                 <img src={productItem.image} alt={productItem.name}/>
+              </Link>
             </div>
-            
             <div className='product-price'>{productItem.heading}</div>
-            <div ><button className='product-add-button'>Add to Cart</button></div>
+            <div className='product-price'>${productItem.price}</div>
+            <div >
+              <button className='product-add-button' onClick={() => handleAddProduct(productItem)}>Add to Cart</button>
+              </div>
         </div>
       ))}
     </div>
