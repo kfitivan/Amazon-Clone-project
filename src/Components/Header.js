@@ -3,11 +3,14 @@ import "./Headerstyles.css"
 import logo from "../assets/amazonelogo.PNG"
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Signup from './Signup';
 
-function Header(props) {
+function Header(props, cartitems) {
   return (
     <div className='header'>
-      <img className='header__logo' src={logo} alt="imglogo"/>
+      <a href='/'>
+        <img className='header__logo' src={logo} alt="imglogo"/>
+      </a>
       <div className='header_location'>
         <a href="/">
             <span className='header__option1'>Deliver to</span>
@@ -20,7 +23,7 @@ function Header(props) {
       </div>
       <div className='header-nav'>
         <div className='header__options'>
-            <a href='/'>
+            <a href='./'>
            <span className='header__option1'>Hello,sign in</span>
            <span className='header__option2'>Accounts & Lists</span> 
            </a>
@@ -34,6 +37,8 @@ function Header(props) {
         <div className='header__options'>
             <a href='/'>
             <AddShoppingCartIcon className='shopping_icon'/>
+            {/* create a span with a function to enable us count items in the cart */}
+            {cartitems.length === 0 ? "" : cartitems.length}
             <span className='header__option2'>Cart</span> 
             </a>
         </div>
