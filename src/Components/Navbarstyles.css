@@ -1,7 +1,11 @@
 
 .navbar-elements{
     background-color: #232F3E;
-    height: 80px;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    margin-top: 60px;
 }
 .item-listing{
     display: flex;

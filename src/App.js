@@ -7,6 +7,7 @@ import data from "./Components/Data"
 import Shops from "./Components/Shops";
 import {BrowserRouter as Router} from "react-router-dom"
 import { useState } from 'react';
+import Footer from './Components/Footer';
 
 function App() {
   const {productItems} = data;
@@ -51,6 +52,7 @@ const handleCartClearance = () =>{
       handleAddProduct={handleAddProduct} 
       handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>
       </Router>
+      <Footer/>
     </div>
   );
 }
