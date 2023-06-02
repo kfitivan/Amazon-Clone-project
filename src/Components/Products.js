@@ -10,9 +10,9 @@ const Products= ({productItems, handleAddProduct}) =>{
         <div className='card'>
             <div className='product-name'><h3>{productItem.title}</h3></div>
             <div className='product-homeimage'>
-              <Link to={productItem.url} className='home-images'>
+              <a href={productItem.url} className='home-images'>
                 <img src={productItem.image} alt={productItem.name}/>
-              </Link>
+              </a>
             </div>
             <div className='product-price'>{productItem.heading}</div>
             <div className='product-price'>${productItem.price}</div>

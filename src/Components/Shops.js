@@ -11,9 +11,9 @@ function Shops({productItems, cartitems, handleAddProduct, handleRemoveProduct, 
         <Route exact path='/' element={<Products productItems={productItems} 
         handleAddProduct={handleAddProduct}/>}>     
         </Route>
-        <Route exact path='./Front/Signup' element={<Signup/>}>     
+        <Route exact path='/' element={<Signup/>}>     
         </Route>
-        <Route exact path='./Front/Cart' element={<Cart cartitems={cartitems} 
+        <Route exact path='/' element={<Cart cartitems={cartitems} 
         handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} 
         handleCartClearance={handleCartClearance}/>}>     
         </Route>
