@@ -4,7 +4,7 @@ import "./signupstyles.css"
 function Signup() {
   return (
     <div className="form-container">
-    <h1>Send a message to us!</h1>
+    <h1>Register!</h1>
     <form>
       <input placeholder="First-Name" />
       <input placeholder="Last-Name" />

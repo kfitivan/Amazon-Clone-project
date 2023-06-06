@@ -96,6 +96,22 @@ const data ={
             heading: "Acer Laptop",
             price: 1050
         },
+        {
+            id: "13",
+            title: "Agricultural inputs",
+            image: require("../assets/agro.PNG"),
+            url: "/",
+            heading: "Weed Master",
+            price: 10
+        },
+        {
+            id: "14",
+            title: "Agricultural inputs",
+            image: require("../assets/agro.PNG"),
+            url: "/",
+            heading: "Pest Cide",
+            price: 15
+        },
         
         
     ]

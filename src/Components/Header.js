@@ -3,6 +3,8 @@ import "./Headerstyles.css"
 import logo from "../assets/amazonelogo.PNG"
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Link } from 'react-router-dom';
+import Signup from './Signup';
 
 function Header(props, cartitems) {
   return (
@@ -22,10 +24,10 @@ function Header(props, cartitems) {
       </div>
       <div className='header-nav'>
         <div className='header__options'>
-            <a href='/Signup'>
-           <span className='header__option1'>Hello,sign in</span>
-           <span className='header__option2'>Accounts & Lists</span> 
-           </a>
+            <Link to="/Signup">
+           <span className='header__option1'>Hello,sign in</span> 
+           </Link>
+           <span className='header__option2'>Accounts & Lists</span>
         </div>
         <div className='header__options'>
             <a href='/'>
@@ -34,12 +36,12 @@ function Header(props, cartitems) {
             </a>  
         </div>
         <div className='header__options'>
-            <a href='/Shops'>
+            <Link to='/Cart'>
             <AddShoppingCartIcon className='shopping_icon'/>
             {/* create a span with a function to enable us count items in the cart */}
             {cartitems.length === 0 ? "" : cartitems.length}
             <span className='header__option2'>Cart</span> 
-            </a>
+            </Link>
         </div>
       </div>
 
