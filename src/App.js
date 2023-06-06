@@ -5,9 +5,10 @@ import Navbar from './Components/Navbar';
 import ShopCard from './Components/ShopCard';
 import data from "./Components/Data"
 import Shops from "./Components/Shops";
-import {BrowserRouter as Router} from "react-router-dom"
+import {BrowserRouter, Route, BrowserRouter as Router, Routes} from "react-router-dom"
 import { useState } from 'react';
 import Footer from './Components/Footer';
+import Signup from './Components/Signup';
 
 function App() {
   const {productItems} = data;
@@ -44,15 +45,18 @@ const handleCartClearance = () =>{
 
   return (
     <div className="App">
-      <Header cartitems={cartitems} />
-      <Navbar/>
+      <BrowserRouter>
+      <Header cartitems={cartitems} /> 
+      <Navbar />
       <HomeSlider />
-      <Router>
       <Shops productItems={productItems} cartitems={cartitems} 
-      handleAddProduct={handleAddProduct} 
-      handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>
-      </Router>
-      <Footer/>
+        handleAddProduct={handleAddProduct} 
+        handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>
+        <Routes>
+        <Route path='/Signup' element={<Signup/>}></Route>
+      </Routes>
+      <Footer />
+      </BrowserRouter>
     </div>
   );
 }

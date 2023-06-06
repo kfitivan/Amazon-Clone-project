@@ -1,12 +1,13 @@
 .form-container {
-    margin: 2rem 4rem;
+    margin: 0 auto;
     color: #2a2a2a;
+    z-index: 999;
   }
   .form-container form {
     padding-top: 3rem;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     margin: auto;
   }
   .form-container input {
