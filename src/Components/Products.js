@@ -1,8 +1,25 @@
 import React from 'react'
 import "./Productsstyles.css"
-import { Link } from 'react-router-dom'
+import { useStateValue } from './StateProvider'
 
-const Products= ({productItems, handleAddProduct}) =>{
+const Products= ({productItems, id, title, image, price, heading}) =>{
+
+  // const [{ basket }, dispatch] = useStateValue();
+  const addToBasket = () => {
+
+    // throwing a typoerror ... next week ...
+    // dispatch the item into the basket
+    // dispatch({
+    //   type: "ADD_TO_BASKET",
+    //   item: {
+    //     id: id,
+    //     title: title,
+    //     image: image,
+    //     price: price,
+    //     heading: heading,
+    //   }
+    // });
+  }
     
   return (
     <div className='products'>
@@ -17,7 +34,7 @@ const Products= ({productItems, handleAddProduct}) =>{
             <div className='product-price'>{productItem.heading}</div>
             <div className='product-price'>${productItem.price}</div>
             <div >
-              <button className='product-add-button' onClick={() => handleAddProduct(productItem)}>Add to Cart</button>
+              <button className='product-add-button' onClick={addToBasket}>Add to Cart</button>
               </div>
         </div>
       ))}
