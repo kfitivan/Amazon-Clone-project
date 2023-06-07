@@ -9,6 +9,7 @@ import {BrowserRouter, Route, BrowserRouter as Router, Routes} from "react-route
 import { useState } from 'react';
 import Footer from './Components/Footer';
 import Signup from './Components/Signup';
+import Checkout from './Components/Checkout';
 
 function App() {
   const {productItems} = data;
@@ -54,6 +55,7 @@ const handleCartClearance = () =>{
         handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>
         <Routes>
         <Route path='/Signup' element={<Signup/>}></Route>
+        <Route path='/Checkout' element={<Checkout/>}></Route>
       </Routes>
       <Footer />
       </BrowserRouter>
