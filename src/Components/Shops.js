@@ -1,24 +1,18 @@
-import React from 'react'
-import {Routes, Route} from "react-router-dom"
-import Products from "./Products"
-import Signup from './Signup'
-import Cart from './Cart'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Products from './Products';
+import Signup from './Signup';
+import { AppProvider } from '../Components/AppContext';
 
-function Shops({productItems, cartitems, handleAddProduct, handleRemoveProduct, handleCartClearance}) {
+function Shops({ productItems }) {
   return (
-    <div>
-      <Routes>
-        <Route exact path='/' element={<Products productItems={productItems} 
-        handleAddProduct={handleAddProduct}/>}>     
-        </Route>
-        <Route exact path='/' element={<Signup/>}></Route>
-        <Route exact path='/' element={<Cart cartitems={cartitems} 
-        handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} 
-        handleCartClearance={handleCartClearance}/>}>     
-        </Route>
-      </Routes>
-    </div>
-  )
+      <AppProvider>
+        <Routes>
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/products" element={<Products productItems={productItems} />} />
+        </Routes>
+      </AppProvider>
+  );
 }
 
-export default Shops
+export default Shops;

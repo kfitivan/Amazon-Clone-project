@@ -3,10 +3,6 @@ import "./Homestyles.css"
 import { useState } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-// import Img1 from "../assets/cloth1.jpg"
-// import Img2 from "../assets/cloth2.jpg"
-// import Img3 from "../assets/phone.jpg"
-// import Img4 from "../assets/laptop.jpg"
 
 function HomeSlider() {
   const sliderImages = [ 
