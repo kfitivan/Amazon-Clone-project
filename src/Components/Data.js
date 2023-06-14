@@ -6,7 +6,7 @@ const data ={
             image: require("../assets/headset.PNG"),
             heading: "Headsets",
             price: 150,
-            url: "/",
+            url: "/"
         },
         {
             id: "2",
@@ -14,7 +14,7 @@ const data ={
             image: require("../assets/keyboard.PNG"),
             heading: "Keyboards",
             price: 100,
-            url: "/products/keyboards",
+            url: "/products/keyboards"
         },
         {
             id: "3",
@@ -22,7 +22,7 @@ const data ={
             image: require("../assets/mice.PNG"),
             heading: "Computer Mice",
             price: 89,
-            url: "/",
+            url: "/"
         },
         {
             id: "4",
@@ -30,7 +30,7 @@ const data ={
             image: require("../assets/chair.PNG"),
             heading: "Flexible Chairs",
             price:350,
-            url: "/",
+            url: "/"
         },
         {
             id: "5",
@@ -46,7 +46,7 @@ const data ={
             image: require("../assets/sweater.PNG"),
             heading: "Tops under $25",
             price: 20,
-            url: "/",
+            url: "/"
         },
         {
             id: "7",
@@ -54,7 +54,7 @@ const data ={
             image: require("../assets/nights.PNG"),
             heading: "Dresses under $30",
             price: 27,
-            url: "/",
+            url: "/"
         },
         {
             id: "8",
@@ -62,7 +62,7 @@ const data ={
             image: require("../assets/shoes.PNG"),
             heading: "Shoes under $50",
             price:47,
-            url: "/",
+            url: "/"
         },
         {
             id: "9",

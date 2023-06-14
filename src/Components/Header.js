@@ -4,18 +4,18 @@ import logo from "../assets/amazonelogo.PNG"
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link } from 'react-router-dom';
-import { useStateValue } from './StateProvider';
+import { useStateValue } from './AppContext';
 
-function Header(props) {
+function Header() {
 
-  // const [{ basket }, dispatch] = useStateValue() .... throwing typoerror .....NEXT WEEK 
+  // const [{ basket }, dispatch] = useStateValue() 
   return (
     <div className='header'>
-      <Link to='/'>
+      <Link to='/Products'>
         <img className='header__logo' src={logo} alt="imglogo"/>
       </Link>
       <div className='header_location'>
-        <Link to="/">
+        <Link to="/Products">
             <span className='header__option1'>Deliver to</span>
             <span className='header__option2'>Uganda</span> 
         </Link>
