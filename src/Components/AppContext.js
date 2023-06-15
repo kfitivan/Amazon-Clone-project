@@ -3,14 +3,14 @@ import { useEffect } from 'react';
 
 
 // Create the context
+// AppContext.js
+
 export const AppContext = createContext();
 
-// Define the initial state
 const initialState = {
-  basket: [], // initial value of basket
+  basket: [],
 };
 
-// Define the reducer function
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TO_BASKET':
@@ -18,20 +18,27 @@ const reducer = (state, action) => {
         ...state,
         basket: [...state.basket, action.item],
       };
-    // Handle other action types if needed
+    case 'REMOVE_FROM_BASKET':
+      const index = state.basket.findIndex((item) => item.id === action.id);
+      if (index >= 0) {
+        const updatedBasket = [...state.basket];
+        updatedBasket.splice(index, 1);
+        return {
+          ...state,
+          basket: updatedBasket,
+        };
+      }
+      return state;
     default:
       return state;
   }
 };
 
-// Create the custom hook
 export const useStateValue = () => useContext(AppContext);
 
-// Create the provider component
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Define the addToBasket function
   const addToBasket = (item) => {
     dispatch({
       type: 'ADD_TO_BASKET',
@@ -39,24 +46,8 @@ export const AppProvider = ({ children }) => {
     });
   };
 
-  // Retrieve basket items from local storage on component mount
-  useEffect(() => {
-    const storedBasket = localStorage.getItem('basket');
-    if (storedBasket) {
-      dispatch({
-        type: 'SET_BASKET',
-        basket: JSON.parse(storedBasket),
-      });
-    }
-  }, []);
-
-  // Update local storage when basket changes
-  useEffect(() => {
-    localStorage.setItem('basket', JSON.stringify(state.basket));
-  }, [state.basket]);
-
   return (
-    <AppContext.Provider value={{ state, addToBasket }}>
+    <AppContext.Provider value={{ state, dispatch, addToBasket }}>
       {children}
     </AppContext.Provider>
   );
