@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 
 // Create the context
-// AppContext.js
 
 export const AppContext = createContext();
 
