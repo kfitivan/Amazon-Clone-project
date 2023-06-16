@@ -28,9 +28,11 @@ function Header() {
       <div className='header-nav'>
         <div className='header__options'>
             <Link to="/Signup">
-           <span className='header__option1'>Hello,sign in</span> 
+           <span className='header__option1'>Create Account</span> 
            </Link>
-           <span className='header__option2'>Accounts & Lists</span>
+           <Link to="Login">
+           <span className='header__option2'>Hello, Login</span>
+           </Link>
         </div>
         <div className='header__options'>
             <Link to='/'>
