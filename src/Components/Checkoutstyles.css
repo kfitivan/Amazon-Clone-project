@@ -10,3 +10,15 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
+.shop__button{
+    background: #f0c14b;
+    border-radius: 2px;
+    width: 10%;
+    height: 30px;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
