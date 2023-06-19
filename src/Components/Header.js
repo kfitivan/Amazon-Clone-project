@@ -12,11 +12,11 @@ function Header() {
 
   return (
     <div className='header'>
-      <Link to='/Products'>
+      <Link to='/'>
         <img className='header__logo' src={logo} alt="imglogo"/>
       </Link>
       <div className='header_location'>
-        <Link to="/Products">
+        <Link to="/">
             <span className='header__option1'>Deliver to</span>
             <span className='header__option2'>Uganda</span> 
         </Link>

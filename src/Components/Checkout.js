@@ -3,6 +3,7 @@ import "./Checkoutstyles.css";
 import Subtotal from "./Subtotal";
 import { AppContext } from './AppContext';
 import CheckoutProducts from './CheckoutProducts';
+import { Link } from 'react-router-dom';
 
 function Checkout() {
   const { state } = useContext(AppContext);
@@ -30,6 +31,11 @@ function Checkout() {
             heading={item.heading}
           />
         ))}
+      </div>
+      <div className='shop__button'>
+      <Link to="/">
+      <button>Let's Shop Again</button>
+      </Link>
       </div>
       <div className='checkout__right'>
         <h3>Your Sub-Total: ${calculateSubtotal()}</h3>
