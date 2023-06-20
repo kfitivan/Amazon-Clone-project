@@ -1,11 +1,11 @@
 import React from 'react'
 import './checkoutproducts.css'
-import { useStateValue } from './AppContext';
+import { useAppContext } from './AppContext';
 
 
 function CheckoutProducts({id, image, title, heading, price}) {
 
-    const { state, dispatch } = useStateValue();
+    const { state, dispatch } = useAppContext()
     const { basket } = state;
     
     const removeFromBasket = () => {

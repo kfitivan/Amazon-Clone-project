@@ -1,10 +1,11 @@
 import React from 'react';
-import { useStateValue } from './AppContext';
+import { useAppContext } from './AppContext';
 import data from './Data';
 import './Productsstyles.css'
 
 const Products = () => {
-  const { addToBasket } = useStateValue();
+  const { addToBasket } = useAppContext();
+
 
   return (
     <div className='products'>

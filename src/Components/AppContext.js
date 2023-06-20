@@ -1,13 +1,10 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { useEffect } from 'react';
-
-
-// Create the context
 
 export const AppContext = createContext();
 
 const initialState = {
   basket: [],
+  user: null,
 };
 
 const reducer = (state, action) => {
@@ -28,12 +25,15 @@ const reducer = (state, action) => {
         };
       }
       return state;
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.user,
+      };
     default:
       return state;
   }
 };
-
-export const useStateValue = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -45,9 +45,25 @@ export const AppProvider = ({ children }) => {
     });
   };
 
+  const removeFromBasket = (id) => {
+    dispatch({
+      type: 'REMOVE_FROM_BASKET',
+      id,
+    });
+  };
+
+  const setUser = (user) => {
+    dispatch({
+      type: 'SET_USER',
+      user,
+    });
+  };
+
   return (
-    <AppContext.Provider value={{ state, dispatch, addToBasket }}>
+    <AppContext.Provider value={{ state, dispatch, addToBasket, removeFromBasket, setUser }}>
       {children}
     </AppContext.Provider>
   );
 };
+
+export const useAppContext = () => useContext(AppContext);
