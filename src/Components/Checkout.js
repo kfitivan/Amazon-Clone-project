@@ -5,10 +5,10 @@ import { AppContext } from './AppContext';
 import CheckoutProducts from './CheckoutProducts';
 import { Link } from 'react-router-dom';
 
-function Checkout() {
+function Checkout({ user }) {
   const { state } = useContext(AppContext);
-  const { basket } = state;
-
+  const { basket} = state;
+  
   // Calculate the subtotal amount
   const calculateSubtotal = () => {
     let subtotal = 0;
@@ -21,6 +21,7 @@ function Checkout() {
   return (
     <div className='checkout'>
       <div className='checkout__title'>
+      <h5>Hello, {user?.email} Here is </h5>
         <h3>Your shopping Basket</h3>
         {basket.map(item =>(
           <CheckoutProducts

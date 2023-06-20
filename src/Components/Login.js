@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 import { auth, db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -17,6 +17,7 @@ function Login() {
         const user = auth.currentUser;
         console.log(user);
 
+        onLogin(); // Call the onLogin function passed from the parent component
         navigate('/checkout');
       })
       .catch((error) => {
@@ -34,6 +35,7 @@ function Login() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
+        onLogin(); // Call the onLogin function passed from the parent component
         navigate('/products');
       })
       .catch((error) => alert(error.message));
