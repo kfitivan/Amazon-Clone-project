@@ -6,9 +6,9 @@ import Navbar from './Components/Navbar';
 import data from './Components/Data';
 import Products from './Components/Products';
 import Footer from './Components/Footer';
-import Signup from './Components/Signup';
 import Login from './Components/Login';
 import Checkout from './Components/Checkout';
+import Payment from './Components/Payment';
 import { auth } from './firebase';
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
           </div>
         )}
         <Routes>
-          <Route path="/Signup" element={<Signup />} />
+          <Route path="/payment" element={<Payment user={user}/>} />
           <Route path="/Login" element={<Login onLogin={handleLogin} />} />
           <Route path="/checkout" element={<Checkout user={user} />} />
           <Route path="/" element={<Products productItems={productItems} />} />
