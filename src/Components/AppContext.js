@@ -35,6 +35,9 @@ const reducer = (state, action) => {
   }
 };
 
+export const getBasketTotal = (basket) =>
+  basket?.reduce((amount, item) => item.price + amount, 0);
+
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -60,7 +63,9 @@ export const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ state, dispatch, addToBasket, removeFromBasket, setUser }}>
+    <AppContext.Provider
+      value={{ state, dispatch, addToBasket, removeFromBasket, setUser }}
+    >
       {children}
     </AppContext.Provider>
   );
