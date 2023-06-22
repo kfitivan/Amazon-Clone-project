@@ -10,6 +10,10 @@ import Login from './Components/Login';
 import Checkout from './Components/Checkout';
 import Payment from './Components/Payment';
 import { auth } from './firebase';
+import { loadStripe} from "@stripe/stripe-js"
+import { Elements} from "@stripe/react-stripe-js"
+
+const promise = loadStripe('pk_test_51NLjCFLrB2rNVQQDM20E8wXe4VLhueIESLW8i1k7UMlyvSTpI4otJHiBchTq04bPEDjILtayWGtOJdLSmnT7nYjx00eJ7etQLX')
 
 function App() {
   const [user, setUser] = useState(null);
@@ -64,7 +68,7 @@ function App() {
           </div>
         )}
         <Routes>
-          <Route path="/payment" element={<Payment user={user}/>} />
+          <Route path="/payment" element={<Elements stripe={promise}><Payment user={user}/></Elements>} />
           <Route path="/Login" element={<Login onLogin={handleLogin} />} />
           <Route path="/checkout" element={<Checkout user={user} />} />
           <Route path="/" element={<Products productItems={productItems} />} />
