@@ -9,6 +9,7 @@ import Footer from './Components/Footer';
 import Login from './Components/Login';
 import Checkout from './Components/Checkout';
 import Payment from './Components/Payment';
+import Orders from './Components/Orders';
 import { auth } from './firebase';
 import { loadStripe} from "@stripe/stripe-js"
 import { Elements} from "@stripe/react-stripe-js"
@@ -71,6 +72,7 @@ function App() {
           <Route path="/payment" element={<Elements stripe={promise}><Payment user={user}/></Elements>} />
           <Route path="/Login" element={<Login onLogin={handleLogin} />} />
           <Route path="/checkout" element={<Checkout user={user} />} />
+          <Route path="/ordes" element={<Orders user={user}/>} />
           <Route path="/" element={<Products productItems={productItems} />} />
         </Routes>
         <Footer />
