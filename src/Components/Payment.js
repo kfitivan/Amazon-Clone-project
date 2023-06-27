@@ -5,6 +5,7 @@ import CheckoutProducts from './CheckoutProducts';
 import { useAppContext, getBasketTotal } from './AppContext'; // Import getBasketTotal
 import { Link, useNavigate } from 'react-router-dom';
 import axios from './axios';
+import { db }  from '../firebase';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 function Payment({ user }) {
@@ -33,24 +34,38 @@ function Payment({ user }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
-
+  
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
       },
+    }).then(({ paymentIntent, error }) => {
+      if (error) {
+        setError(`Payment failed: ${error.message}`);
+        setProcessing(false);
+      } else {
+        db.collection("user")
+          .doc(user?.uid)
+          .collection('orders')
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created
+          });
+  
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+  
+        dispatchEvent({
+          type: "EMPTY_BASKET"
+        });
+  
+        navigate('/orders');
+      }
     });
-
-    if (payload.error) {
-      setError(`Payment failed: ${payload.error.message}`);
-      setProcessing(false);
-    } else {
-      setSucceeded(true);
-      setError(null);
-      setProcessing(false);
-
-      navigate('/orders');
-    }
-  };
+  };  
 
   const handleChange = (event) => {
     setDisabled(event.empty);
